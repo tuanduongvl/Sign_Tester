@@ -32,6 +32,7 @@ Public Class ASynchronousSocketListener
             Sign_Tester.Log_It("Local address at port " & port)
             Sign_Tester.Log_It("Connecting...")
 
+            run_TCP = True
             Dim myThread As Thread
             myThread = New Thread(AddressOf StartListening)
             myThread.IsBackground = True
@@ -39,7 +40,6 @@ Public Class ASynchronousSocketListener
 
             allDone.Reset()
 
-            run_TCP = True
         End If
         Start_TCP = run_TCP
 
