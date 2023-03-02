@@ -106,6 +106,7 @@ Partial Class Sign_Tester
         Me.lblEnable = New System.Windows.Forms.Label()
         Me.lblGroup = New System.Windows.Forms.Label()
         Me.lblSign = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.grpCtrlStatus = New System.Windows.Forms.GroupBox()
         Me.lblAdrs = New System.Windows.Forms.Label()
         Me.lblAddress = New System.Windows.Forms.Label()
@@ -141,6 +142,11 @@ Partial Class Sign_Tester
         Me.cmbFacSw1 = New System.Windows.Forms.ComboBox()
         Me.lblESI = New System.Windows.Forms.Label()
         Me.lblFacSw = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         CType(Me.nudGroupID7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudGroupID8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudGroupID9, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -155,6 +161,7 @@ Partial Class Sign_Tester
         CType(Me.nudGroupID1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudNumSigns, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpSigns.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpCtrlStatus.SuspendLayout()
         Me.grpConfig.SuspendLayout()
         CType(Me.numTCPPort, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -165,6 +172,11 @@ Partial Class Sign_Tester
         Me.grpGroup3.SuspendLayout()
         Me.grpGroup2.SuspendLayout()
         Me.grpGroup1.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'nudGroupID7
@@ -1042,6 +1054,14 @@ Partial Class Sign_Tester
         Me.lblSign.TabIndex = 1
         Me.lblSign.Text = "Sign ID"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(914, 37)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(50, 50)
+        Me.PictureBox1.TabIndex = 82
+        Me.PictureBox1.TabStop = False
+        '
         'grpCtrlStatus
         '
         Me.grpCtrlStatus.Controls.Add(Me.lblAdrs)
@@ -1120,11 +1140,11 @@ Partial Class Sign_Tester
         Me.txtProtocol.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtProtocol.Location = New System.Drawing.Point(879, 9)
+        Me.txtProtocol.Location = New System.Drawing.Point(1236, 9)
         Me.txtProtocol.Multiline = True
         Me.txtProtocol.Name = "txtProtocol"
         Me.txtProtocol.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtProtocol.Size = New System.Drawing.Size(193, 605)
+        Me.txtProtocol.Size = New System.Drawing.Size(226, 605)
         Me.txtProtocol.TabIndex = 2
         '
         'btnExit
@@ -1186,7 +1206,7 @@ Partial Class Sign_Tester
         Me.chkDoOutput.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkDoOutput.FlatAppearance.BorderColor = System.Drawing.Color.Red
         Me.chkDoOutput.FlatAppearance.CheckedBackColor = System.Drawing.Color.Red
-        Me.chkDoOutput.Location = New System.Drawing.Point(879, 621)
+        Me.chkDoOutput.Location = New System.Drawing.Point(1236, 620)
         Me.chkDoOutput.Name = "chkDoOutput"
         Me.chkDoOutput.Size = New System.Drawing.Size(95, 17)
         Me.chkDoOutput.TabIndex = 17
@@ -1403,11 +1423,57 @@ Partial Class Sign_Tester
         Me.lblFacSw.TabIndex = 0
         Me.lblFacSw.Text = "Facility Switch"
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.Location = New System.Drawing.Point(1020, 37)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(50, 50)
+        Me.PictureBox2.TabIndex = 83
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Location = New System.Drawing.Point(1126, 37)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(50, 50)
+        Me.PictureBox3.TabIndex = 84
+        Me.PictureBox3.TabStop = False
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Location = New System.Drawing.Point(914, 143)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(50, 50)
+        Me.PictureBox4.TabIndex = 85
+        Me.PictureBox4.TabStop = False
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.Location = New System.Drawing.Point(1020, 143)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(50, 50)
+        Me.PictureBox5.TabIndex = 86
+        Me.PictureBox5.TabStop = False
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.Location = New System.Drawing.Point(1126, 143)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(50, 50)
+        Me.PictureBox6.TabIndex = 87
+        Me.PictureBox6.TabStop = False
+        '
         'Sign_Tester
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1084, 647)
+        Me.ClientSize = New System.Drawing.Size(1474, 647)
+        Me.Controls.Add(Me.PictureBox6)
+        Me.Controls.Add(Me.PictureBox5)
+        Me.Controls.Add(Me.PictureBox4)
+        Me.Controls.Add(Me.PictureBox3)
+        Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.grpGroups)
         Me.Controls.Add(Me.chkDoOutput)
         Me.Controls.Add(Me.grpConfig)
@@ -1432,6 +1498,7 @@ Partial Class Sign_Tester
         CType(Me.nudNumSigns, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grpSigns.ResumeLayout(False)
         Me.grpSigns.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grpCtrlStatus.ResumeLayout(False)
         Me.grpCtrlStatus.PerformLayout()
         Me.grpConfig.ResumeLayout(False)
@@ -1445,6 +1512,11 @@ Partial Class Sign_Tester
         Me.grpGroup3.ResumeLayout(False)
         Me.grpGroup2.ResumeLayout(False)
         Me.grpGroup1.ResumeLayout(False)
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1567,4 +1639,10 @@ Partial Class Sign_Tester
     Friend WithEvents lblFacSw As Label
     Friend WithEvents lblTCPPort As Label
     Friend WithEvents numTCPPort As NumericUpDown
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents PictureBox6 As PictureBox
 End Class

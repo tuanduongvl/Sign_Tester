@@ -185,6 +185,7 @@
                 Sign_Tester.Sign_Status(ii).Frame_ID = Frame_Id
                 Sign_Tester.Sign_Status(ii).lblFrame.Text = Sign_Tester.Controller_Status(Frame_Id).Frame_Text
                 Sign_Tester.Sign_Status(ii).lblMessage.Text = Sign_Tester.Controller_Status(Message_Id).Message_Text
+                Sign_Tester.Sign_Status(ii).pictureBox.Image = Sign_Tester.Controller_Status(Frame_Id).Frame_Image
                 Message_Step += 1
                 If Sign_Tester.Controller_Status(Message_Id).Message_Frame_ID(Message_Step) = 0 Then
                     Message_Step = 0
@@ -316,16 +317,20 @@
                     If Sign_Tester.Group_Status(Group_Id).ESI_Sw >= 0 Then
                         Sign_Tester.Sign_Status(ii).Set_Frame_ID = Frame_Id
                         Sign_Tester.Sign_Status(ii).Set_Message_ID = 0
-                    Else
+                    ElseIf Sign_Tester.Sign_Status(ii).Group_ID = Group_Id Then
+
                         Sign_Tester.Sign_Status(ii).Frame_ID = Frame_Id
-                        Sign_Tester.Sign_Status(ii).Set_Frame_ID = Frame_Id
-                        Sign_Tester.Sign_Status(ii).lblFrame.Text = Sign_Tester.Controller_Status(Frame_Id).Frame_Text
-                        Sign_Tester.Sign_Status(ii).Message_ID = 0
-                        Sign_Tester.Sign_Status(ii).Set_Message_ID = 0
-                        Sign_Tester.Sign_Status(ii).Message_Step = 0
-                        Sign_Tester.Sign_Status(ii).lblMessage.Text = "0"
+                            Sign_Tester.Sign_Status(ii).Set_Frame_ID = Frame_Id
+                            Sign_Tester.Sign_Status(ii).lblFrame.Text = Sign_Tester.Controller_Status(Frame_Id).Frame_Text
+                            Sign_Tester.Sign_Status(ii).pictureBox.Image = Sign_Tester.Controller_Status(Frame_Id).Frame_Image
+
+                            Sign_Tester.Sign_Status(ii).Message_ID = 0
+                            Sign_Tester.Sign_Status(ii).Set_Message_ID = 0
+                            Sign_Tester.Sign_Status(ii).Message_Step = 0
+                            Sign_Tester.Sign_Status(ii).lblMessage.Text = "0"
+
                     End If
-                End If
+                    End If
             Next
             Send_01_Star_Ack(Tx_Data, Rx_Data.Get_Mi_Code)
         Else

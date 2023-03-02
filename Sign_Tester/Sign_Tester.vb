@@ -35,6 +35,7 @@ Public Class Sign_Tester
         'Public Message_Step As Integer
         Public Message_Frame_ID(6) As Integer
         Public Message_Packet As Packet_Data
+        Public Frame_Image As Image
 
     End Class
 
@@ -75,6 +76,8 @@ Public Class Sign_Tester
         Public cmbError As ComboBox             '   also controller error code
         Public lblFrame As Label
         Public lblMessage As Label
+        Public pictureBox As PictureBox
+
 
     End Class
 
@@ -184,6 +187,7 @@ Public Class Sign_Tester
         Init_Sign_Enable()
         Init_Sign_Error()
         Init_Sign_Frame()
+        Init_Sign_Image()
         Init_Sign_Message()
     End Sub
 
@@ -284,6 +288,15 @@ Public Class Sign_Tester
         Sign_Status(10).lblFrame = lblSignFrame10
         Sign_Status(11).lblFrame = lblSignFrame11
         Sign_Status(12).lblFrame = lblSignFrame12
+    End Sub
+
+    Public Sub Init_Sign_Image()
+        Sign_Status(1).pictureBox = PictureBox1
+        Sign_Status(2).pictureBox = PictureBox2
+        Sign_Status(3).pictureBox = PictureBox3
+        Sign_Status(4).pictureBox = PictureBox4
+        Sign_Status(5).pictureBox = PictureBox5
+        Sign_Status(6).pictureBox = PictureBox6
     End Sub
 
     Public Sub Init_Sign_Message()
@@ -556,6 +569,21 @@ Public Class Sign_Tester
             Set_ISLUS_Frame(189, 0, "189 - Red Cross")
             Set_ISLUS_Frame(250, 0, "250 - Matrix Test")
             Set_ISLUS_Frame(251, &H8, "251 - Matrix Test + Annulus")
+
+            Set_Frame_Image(10, Image.FromFile("10.bmp"))
+            Set_Frame_Image(20, Image.FromFile("20.bmp"))
+            Set_Frame_Image(30, Image.FromFile("30.bmp"))
+            Set_Frame_Image(40, Image.FromFile("40.bmp"))
+            Set_Frame_Image(50, Image.FromFile("50.bmp"))
+            Set_Frame_Image(60, Image.FromFile("60.bmp"))
+            Set_Frame_Image(70, Image.FromFile("70.bmp"))
+            Set_Frame_Image(80, Image.FromFile("80.bmp"))
+            Set_Frame_Image(182, Image.FromFile("UL.bmp"))
+            Set_Frame_Image(183, Image.FromFile("UR.bmp"))
+            Set_Frame_Image(184, Image.FromFile("LL.bmp"))
+            Set_Frame_Image(185, Image.FromFile("LR.bmp"))
+            Set_Frame_Image(189, Image.FromFile("X.bmp"))
+            Set_Frame_Image(250, Image.FromFile("matrixTest.bmp"))
         End If
 
         If cmbSignType.Text = "CMS" Then
@@ -638,6 +666,10 @@ Public Class Sign_Tester
     Private Sub Set_Frame(Id As Integer, Text As String)
         Controller_Status(Id).Frame_Loaded = True
         Controller_Status(Id).Frame_Text = Text
+    End Sub
+
+    Private Sub Set_Frame_Image(Id As Integer, image As Image)
+        Controller_Status(Id).Frame_Image = image
     End Sub
 
     Private Sub Set_Ctrl_Enabled_TCP()
