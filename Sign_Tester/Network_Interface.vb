@@ -106,15 +106,20 @@ Public Class ASynchronousSocketListener
 
         Dim state As State_Object = CType(ar.AsyncState, State_Object)
         Dim handler As Socket = state.Work_Socket
+        Try
+            ' Read data from the client socket. 
+            Dim read As Integer = handler.EndReceive(ar)
 
-        ' Read data from the client socket. 
-        Dim read As Integer = handler.EndReceive(ar)
+            ' Data was read from the client socket.
+            If read > 0 Then
+                Sign_Tester.Rx_Comms(0).Num_Bytes = read
+            End If
+            handler.BeginReceive(Sign_Tester.Rx_Comms(0).Buffer, 0, (Packet_Data.Packet_Size * 2) + 20, 0, AddressOf readCallback, state)
+        Catch ex As Exception
+            Console.WriteLine("connection interrupted")
 
-        ' Data was read from the client socket.
-        If read > 0 Then
-            Sign_Tester.Rx_Comms(0).Num_Bytes = read
-        End If
-        handler.BeginReceive(Sign_Tester.Rx_Comms(0).Buffer, 0, (Packet_Data.Packet_Size * 2) + 20, 0, AddressOf readCallback, state)
+
+        End Try
 
     End Sub     '   readCallback
 
